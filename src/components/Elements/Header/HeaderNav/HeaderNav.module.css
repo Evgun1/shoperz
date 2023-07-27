@@ -1,0 +1,46 @@
+.frame {
+  background-color: #319dff;
+}
+
+.list {
+  padding: 0;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+
+.list button {
+  position: relative;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding: 12px 50px;
+  color: #ffffff;
+  background: none;
+  border: 1px solid #0077e4;
+  border-top: none;
+  border-bottom: none;
+}
+
+.list button::after {
+  content: "";
+  position: absolute;
+  right: 37px;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 0;
+  height: 0;
+  border-top: 4px solid #ffffff;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+}
+
+.list li:first-child .button {
+  border-left: none;
+}
+
+.list li:last-child .button {
+  border-right: none;
+}
