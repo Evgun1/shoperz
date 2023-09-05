@@ -1,62 +1,64 @@
-import HeaderTop from "./HeaderTop/HeaderTop";
-import HeaderNav from "./HeaderNav/HeaderNav";
+import HeaderTop from './HeaderTop/HeaderTop';
+import HeaderNav from './HeaderNav/HeaderNav';
+import classes from './Header.module.css';
+import SearchForm from './SearchForm/SearchForm';
+import { Link } from 'react-router-dom';
 
-import logo from "../../img/Logo.svg";
-import search from "../../img/icons/search.svg";
-import profile from "../../img/icons/profile.svg";
-import shuffle from "../../img/icons/shuffle.svg";
-import favorites from "../../img/icons/favorites.svg";
-import cart from "../../img/icons/cart.svg";
+import Logo from '../../../image/Logo.svg';
+import Profiler from '../../../image//icons/profile.svg';
+import Shuffle from '../../../image/icons/shuffle.svg';
+import Favorites from '../../../image/icons/favorites.svg';
+import Cart from '../../../image/icons/cart.svg';
+import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import CartBotton from '../Cart/CartButton';
+import HamburgerBtn from '../Hamburger/HamburgerBtn';
 
-import classes from "./Header.module.css";
+const DATA = [
+    { src: Profiler, alt: '' },
+    { src: Shuffle, alt: '' },
+    { src: Favorites, alt: '' },
+];
 
 const Header = () => {
-  return (
-    <>
-      <HeaderTop />
-      <div className={classes.frame}>
-        <div className="container">
-          <div className={classes.flex}>
-            <div className={`${classes["grid__left"]} ${classes.logo}`}>
-              <div className={classes.burger}>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <a href="">
-                <img src={logo} alt="" />
-              </a>
+    const { isTablet, isDesktop } = useSelector((state) => state.responsive);
+
+    // console.log(responsive);
+    return (
+        <header className={classes.header}>
+            <HeaderTop />
+            <div className={classes.frame}>
+                <div className="container">
+                    <div className={classes.flex}>
+                        <div
+                            className={`${classes['grid__left']} ${classes.logo}`}
+                        >
+                            <HamburgerBtn />
+                            <Link to="/">
+                                <img src={Logo} alt="" />
+                            </Link>
+                        </div>
+                        {isTablet || (isDesktop && <SearchForm />)}
+                        <div className={classes['grid__right']}>
+                            {DATA &&
+                                DATA.length &&
+                                DATA.map((data, index) => (
+                                    <button key={index}>
+                                        <img
+                                            className={classes.img}
+                                            src={data.src}
+                                            alt={data.alt}
+                                        />
+                                    </button>
+                                ))}
+                            <CartBotton />
+                        </div>
+                    </div>
+                </div>
             </div>
-            <form
-              action=""
-              className={`${classes.from} ${classes["grid__medium"]}`}
-            >
-              <input type="text" className={classes.search} />
-              <button className={classes.button}>All Categories</button>
-              <button className="">
-                <img src={search} alt="" />
-              </button>
-            </form>
-            <div className={classes["grid__right"]}>
-              <button>
-                <img src={profile} alt="" />
-              </button>
-              <button>
-                <img src={shuffle} alt="" />
-              </button>
-              <button>
-                <img src={favorites} alt="" />
-              </button>
-              <button>
-                <img src={cart} alt="" /> <div>$0.00</div>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <HeaderNav />
-    </>
-  );
+            <HeaderNav />
+        </header>
+    );
 };
 
 export default Header;

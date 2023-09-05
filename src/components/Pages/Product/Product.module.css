@@ -1,0 +1,24 @@
+@media (min-width: 576px) {
+    .wraperProduct {
+        margin: 40px 0;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 40px;
+    }
+
+    .wraperCategory {
+        background: var(--grey-100, #eef0f4);
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .grid{
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+}

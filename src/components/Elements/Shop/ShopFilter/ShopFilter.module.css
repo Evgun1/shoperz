@@ -1,0 +1,45 @@
+@media screen and (min-width: 576px) {
+    .wraper {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .wraper {
+        display: block;
+    }
+
+    .flex {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        border-radius: 6px;
+        border: 1px solid var(--grey-100, #eef0f4);
+        background: var(--grey-100, #eef0f4);
+    }
+
+    .all {
+        position: relative;
+        color: var(--grey-900, #1d232c);
+
+        /* Roboto 14px/Roboto_medium_14px */
+        font-family: Roboto;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+    .link {
+        color: var(--grey-700, #586a84);
+
+        /* Roboto 14px/Roboto_regular_14px */
+        font-family: Roboto;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration: none;
+    }
+}

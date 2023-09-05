@@ -1,0 +1,110 @@
+@media screen and (min-width: 576px) {
+    .section {
+        padding: 40px 0;
+    }
+    .bottom {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-auto-rows: 200px;
+        gap: 20px;
+    }
+
+    .bottom_elem {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-decoration: none;
+        padding: 0 0 0 30px;
+    }
+
+    .bottom_elem h3 {
+        width: 296px;
+        color: var(--grey-900, #1d232c);
+
+        /* Roboto 30px/Roboto_light_30px */
+        font-family: Roboto;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+
+    .bottom_elemFirst {
+        border-radius: 6px;
+        background: url(../../../../image/img/JBL-Audio-Speakers-PNG-Background-Image_1.png),
+            linear-gradient(225deg, #f2fff7 0%, #c3f4ff 100%);
+        background-size: 40%, cover;
+        background-repeat: no-repeat;
+        background-position: 90% 50%;
+    }
+
+    .bottom_elemLast {
+        border-radius: 6px;
+        background: url(../../../../image/img/ds4_controller_1.png),
+            var(
+                --pale-gradient-purple,
+                linear-gradient(225deg, #fff4fd 0%, #cbcdff 100%)
+            );
+        background-size: 35%, cover;
+        background-repeat: no-repeat;
+        background-position: 90% 50%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .bottom {
+        display: grid;
+        grid-auto-rows: 200px;
+        gap: 20px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .section {
+        padding: 40px 0;
+    }
+    .bottom {
+        display: grid;
+        grid-auto-rows: 200px;
+        gap: 20px;
+    }
+    .bottom_elem h3 {
+        width: 296px;
+        color: var(--grey-900, #1d232c);
+
+        /* Roboto 30px/Roboto_light_30px */
+        font-family: Roboto;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+
+    .bottom_elem {
+        padding: 0 0 0 60px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .bottom {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 200px;
+        gap: 20px;
+    }
+    .bottom_elem {
+        padding: 0  30px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .bottom {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 200px;
+        gap: 20px;
+    }
+    .bottom_elem {
+        padding: 0 0 0 60px;
+    }
+}

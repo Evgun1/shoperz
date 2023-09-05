@@ -1,0 +1,32 @@
+.hamburger {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    /* z-index: 2; */
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 20px;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #586a84;
+}
+
+.hamburger span:nth-of-type(2) {
+    top: calc(50% - 5px);
+}
+
+.hamburger span:nth-of-type(3) {
+    top: calc(50% + 5px);
+}
+
+@media screen and (min-width: 992px) {
+    .hamburger {
+        display: none;
+    }
+}

@@ -1,0 +1,127 @@
+.section {
+  margin-bottom: 60px;
+}
+
+.frame_title {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.frame_title h2 {
+  position: relative;
+  padding: 20px 0 10px 0;
+  color: var(--grey-900, #1d232c);
+
+  /* Roboto 24px/Roboto_medium_24px */
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.frame_title h2::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: var(--primary-600, #319dff);
+  bottom: 0;
+}
+
+.elem {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid var(--grey-100, #eef0f4);
+}
+
+.category {
+  color: var(--grey-700, #586a84);
+
+  /* Roboto 12px/Roboto_regular_12px */
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  margin-bottom: 20px;
+  height: 38px;
+  color: var(--primary-700, #0077e4);
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.link {
+  display: block;
+  text-decoration: none;
+}
+
+.img {
+  height: 200px;
+  object-fit: contain;
+}
+
+.priceWraper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.salePrice {
+  color: var(--danger-600, #ff316a);
+
+  /* Roboto 18px/Roboto_bold_18px */
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.priceStrikethrough {
+  color: var(--grey-900, #1d232c);
+  display: flex;
+  position: relative;
+  /* Roboto 12px/Roboto_regular_12px_old_price */
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: line-through;
+}
+
+.price {
+  color: var(--grey-900, #1d232c);
+
+  /* Roboto 18px/Roboto_bold_18px */
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.priceWraper button {
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  border: none;
+  background: var(--grey-200, #dde1e8);
+}
+
+.priceWraper button img {
+  width: 16px;
+  height: 16px;
+}
