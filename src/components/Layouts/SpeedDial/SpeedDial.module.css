@@ -1,0 +1,49 @@
+.wrapper {
+    position: relative;
+}
+
+.btnOpen {
+    /* position: absolute; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    border: none;
+    background: white;
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn img {
+    width: 16px;
+    height: 16px;
+    /* background: #dde1e8; */
+}
+
+.btnMain {
+    width: 44px;
+    height: 44px;
+    background: var(--grey-200, #dde1e8);
+
+    border-radius: 100%;
+    border: none;
+}
+
+.list {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+

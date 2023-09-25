@@ -3,9 +3,9 @@ import MobileSubMenu from './MobileSubMenu';
 import SearchForm from '../Header/SearchForm/SearchForm';
 
 import classes from './Hamburger.module.css';
-import { SET, MENU, MEDIA } from '../../../data/data';
-import { uiActionMenu } from '../../../store/mobileMenu/ui-sliceMobile';
 
+import { SET, MENU, MEDIA } from '../../../data/data';
+import { toggle } from '../../../store/popup/popup';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Select from 'react-select';
@@ -40,7 +40,7 @@ const Hamburger = () => {
             return;
         }
 
-        dispatch(uiActionMenu.toggle());
+        dispatch(toggle(null));
     };
 
     return (

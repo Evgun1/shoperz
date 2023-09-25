@@ -1,0 +1,32 @@
+.productWraper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.product {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product img {
+    /* height:  200px; */
+    width: 200px;
+    object-fit: contain;
+}
+
+.product p {
+    font-size: 20px;
+}
+.amount{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.amount button{
+    background: none;
+    border: none;
+}

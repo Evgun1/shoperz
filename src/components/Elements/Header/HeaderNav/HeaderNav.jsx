@@ -27,7 +27,7 @@ const HeaderNav = () => {
             <li><NavLink className={classes.button} to={'/shop'}>Shop</NavLink></li>
             {category.map((category, index) => (
               <li key={index}>
-                <NavLink className={classes.button} to={`category/${category}`}>{category}</NavLink>
+                <NavLink style={{ textTransform: 'capitalize' }} className={classes.button} to={`category/${category}`}>{category}</NavLink>
               </li>
             ))}
           </ul>

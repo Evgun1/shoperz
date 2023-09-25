@@ -1,49 +1,21 @@
 import classes from './Cart.module.css';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { uiAction } from '../../../store/cart/ui-slice';
-import { remoteToCart } from '../../../store/cart/cart';
 import { useEffect, useState } from 'react';
 import CartItem from './CartItem';
+import useFetchProductsById from '../../../hooks/useFetchProductsById';
+import { toggle } from '../../../store/popup/popup';
 
 const Cart = () => {
     const cartProducts = useSelector((state) => state.cart.productsArray);
-    const [products, setProducts] = useState([]);
+    const products = useFetchProductsById(cartProducts)
     const [cartTotal, setCartTotal] = useState();
     const dispatch = useDispatch();
 
     const toggleCartHandler = () => {
-        dispatch(uiAction.toggle());
+        dispatch(toggle(null));
     };
 
-    useEffect(() => {
-        const fetchProduct = async () => {
-            if (cartProducts && cartProducts.length) {
-                const productsItems = await Promise.all(
-                    cartProducts.map(async (cartItem) => {
-                        const response = await fetch(
-                            'https://dummyjson.com/products/' +
-                                cartItem.productID
-                        );
-                        if (!response.ok && response.status !== 200)
-                            throw new Error(response.statusText);
-
-                        const data = await response.json();
-
-                        return {
-                            ...data,
-                            amount: cartItem.amount,
-                        };
-                    })
-                );
-                setProducts(productsItems);
-            } else {
-                setProducts(null);
-            }
-        };
-
-        fetchProduct();
-    }, [cartProducts]);
 
     useEffect(() => {
         let total = 0;
@@ -60,7 +32,7 @@ const Cart = () => {
 
     return (
         <div className={classes.cart}>
-            this is cart
+            This is cart
             <div className={classes.product}>
                 {products && products.length ? (
                     products.map((product, index) => (

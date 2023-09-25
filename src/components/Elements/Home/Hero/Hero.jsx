@@ -33,9 +33,9 @@ const Hero = () => {
                 className={classes.frame}
                 style={{
                   background: `url(${slide.img.src}), linear-gradient(to right, #f2fff7, #c3f4ff)`,
-                  backgroundSize: `50%, cover`,
+                  backgroundSize: `40%, cover`,
                   backgroundRepeat: `no-repeat`,
-                  backgroundPosition: `100% 100%`,
+                  backgroundPosition: `90% 100%`,
                 }}
               >
                 <div className={`container ${classes.container}`}>

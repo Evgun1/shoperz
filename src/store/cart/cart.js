@@ -25,12 +25,12 @@ export const cartSlice = createSlice({
             state.totalAmount = cart.totalAmount;
         },
         addToCart(state, action) {
-            console.log(action.payload, state.productsArray, state.totalAmount);
+            // console.log(action.payload, state.productsArray, state.totalAmount);
             const payloadProduct = action.payload;
             const existingProductIndex = state.productsArray.findIndex(
                 (product) => product.productID === payloadProduct.productID
             );
-            console.log(existingProductIndex);
+            // console.log(existingProductIndex);
             if (existingProductIndex === -1) {
                 state.productsArray.push(payloadProduct);
                 state.totalAmount++;
@@ -47,7 +47,7 @@ export const cartSlice = createSlice({
             const existingProductIndex = state.productsArray.findIndex(
                 (product) => product.productID === payloadID
             );
-            console.log(existingProductIndex);
+            // console.log(existingProductIndex);
 
             if (existingProductIndex !== -1) {
                 state.productsArray.splice(existingProductIndex, 1);

@@ -3,14 +3,14 @@ import classes from './MobileSubMenu.module.css';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { uiActionMenu } from '../../../store/mobileMenu/ui-sliceMobile';
+import { toggle } from '../../../store/popup/popup';
 
 const MobileSubMenu = (props) => {
     const [category, setCategory] = useState();
 
     const dispatch = useDispatch();
     const btnClickClose = () => {
-        dispatch(uiActionMenu.toggle());
+        dispatch(toggle(null));
     };
 
     useEffect(() => {
@@ -31,7 +31,7 @@ const MobileSubMenu = (props) => {
     const btClick = () => props.setShowSubMenu(false);
 
     return (
-        <div>
+        <div className={classes.wrapper}>
             <button className={classes.btn} onClick={btClick}>
                 Back
             </button>

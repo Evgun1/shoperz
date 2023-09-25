@@ -3,6 +3,7 @@ import Subtract from '../../../../image/icons/Subtract.svg';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import classes from './FooterCategory.module.css';
+import SpeedDial from '../../../Layouts/SpeedDial/SpeedDial';
 
 const array = [
     { title: 'Smartphone', category: 'smartphones' },
@@ -59,9 +60,11 @@ const Column = ({ title, category }) => {
                             </div>
                             <div className={classes.price}>
                                 <p>${product.price}</p>
-                                <button className={classes.button}>
+                                {/* <button className={classes.button}>
                                     <img src={Subtract} alt="" />
-                                </button>
+                                </button> */}
+
+                                <SpeedDial id={product.id} />
                             </div>
                         </div>
                     </div>

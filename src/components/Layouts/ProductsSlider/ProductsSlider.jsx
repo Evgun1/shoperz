@@ -24,6 +24,7 @@ const ProductsSlider = (props) => {
                             clickable: true,
                         }}
                         modules={[Pagination]}
+                        
                         className="mySwiper"
                         breakpoints={{
                             768: {
@@ -47,6 +48,7 @@ const ProductsSlider = (props) => {
                                     salePrice={product.salePrice}
                                     showSalePrice={product.showSalePrice}
                                     title={product.title}
+                                    previewType='secondary'
                                 />
                             </SwiperSlide>
                         ))}

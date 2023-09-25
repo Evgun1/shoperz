@@ -1,14 +1,20 @@
 import { configureStore } from '@reduxjs/toolkit';
 import cartReducer from './cart/cart';
-import uiSlice from './cart/ui-slice';
 import { responsiveReducer } from './responsive';
-import uiSliceMenu from './mobileMenu/ui-sliceMobile';
+import wishlistReducer from './wishlist/wishlist';
+import popup from './popup/popup';
+import search from './search/search';
 
 export default configureStore({
     reducer: {
+        search: search,
+        popup: popup,
         cart: cartReducer,
-        ui: uiSlice,
-        uiMobileMenu: uiSliceMenu,
-        responsive: responsiveReducer
+        wishlist: wishlistReducer,
+        responsive: responsiveReducer,
     },
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
+            serializableCheck: false,
+        }),
 });

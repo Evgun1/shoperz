@@ -7,17 +7,19 @@ import { Link } from 'react-router-dom';
 import Logo from '../../../image/Logo.svg';
 import Profiler from '../../../image//icons/profile.svg';
 import Shuffle from '../../../image/icons/shuffle.svg';
-import Favorites from '../../../image/icons/favorites.svg';
+import Wishlist from '../../../image/icons/favorites.svg';
 import Cart from '../../../image/icons/cart.svg';
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import CartBotton from '../Cart/CartButton';
+import BtnWishlist from '../Wishlist/btnWishlist';
 import HamburgerBtn from '../Hamburger/HamburgerBtn';
+import BtnProfile from '../Profile/BtnProfile';
 
 const DATA = [
     { src: Profiler, alt: '' },
     { src: Shuffle, alt: '' },
-    { src: Favorites, alt: '' },
+    { src: Wishlist, alt: '' },
 ];
 
 const Header = () => {
@@ -38,19 +40,10 @@ const Header = () => {
                                 <img src={Logo} alt="" />
                             </Link>
                         </div>
-                        {isTablet || (isDesktop && <SearchForm />)}
+                        <div>{isTablet || (isDesktop && <SearchForm />)}</div>
                         <div className={classes['grid__right']}>
-                            {DATA &&
-                                DATA.length &&
-                                DATA.map((data, index) => (
-                                    <button key={index}>
-                                        <img
-                                            className={classes.img}
-                                            src={data.src}
-                                            alt={data.alt}
-                                        />
-                                    </button>
-                                ))}
+                            <BtnProfile />
+                            <BtnWishlist />
                             <CartBotton />
                         </div>
                     </div>
