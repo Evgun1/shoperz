@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, createHashRouter } from 'react-router-dom';
 import Home from '../components/Pages/Home/Home';
 import Shop from '../components/Pages/Shop/Shop';
 import Category from '../components/Pages/Category/Category';
@@ -39,6 +39,6 @@ export const routerConfig = [
     },
 ];
 
-const router = createBrowserRouter(routerConfig);
+const router = createHashRouter(routerConfig);
 
 export default router;
