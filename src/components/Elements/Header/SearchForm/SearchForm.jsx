@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import classes from '../Header.module.css';
 
-import search from './search.svg';
-import { useEffect, useState } from 'react';
+import searchImg from './search.svg';
+import { useEffect, useRef, useState } from 'react';
 import { searchProducts } from '../../../../store/search/actions';
+import { Link } from 'react-router-dom';
 
 const SearchForm = () => {
     const [categoryData, setCategoryData] = useState([]);
@@ -11,6 +12,7 @@ const SearchForm = () => {
     const [isTouched, setIsTouched] = useState(false);
     const dispatch = useDispatch();
     const search = useSelector((state) => state.search);
+
     useEffect(() => {
         fetch('https://dummyjson.com/products/categories')
             .then((responsse) => {
@@ -32,9 +34,19 @@ const SearchForm = () => {
         setIsTouched(true);
     };
 
-    useEffect(() => console.log(search), [search]);
+    const documentClickHandler = (event) => {
+        const component = event.target.closest('#search-form');
+        if (!component) setIsTouched(false);
+    };
+
+    useEffect(() => {
+        document.addEventListener('click', documentClickHandler);
+        return () => {
+            document.removeEventListener('click', documentClickHandler);
+        };
+    }, []);
     return (
-        <div className={classes.wrapper}>
+        <div className={classes.wrapper} id="search-form">
             <form
                 action=""
                 className={`${classes.from} ${classes['grid__medium']}`}
@@ -45,9 +57,10 @@ const SearchForm = () => {
                     className={classes.search}
                     name="productName"
                     onChange={changeHandler}
+                    autoComplete="off"
                 />
 
-                {categoryData.length > 0 && (
+                {/* {categoryData.length > 0 && (
                     <div className={classes.div}>
                         <select
                             id=""
@@ -63,18 +76,26 @@ const SearchForm = () => {
                             ))}
                         </select>
                     </div>
-                )}
+                )} */}
                 <button type="submit" className={classes.button}>
-                    <img className={classes.img_button} src={search} alt="" />
+                    <img
+                        className={classes.img_button}
+                        src={searchImg}
+                        alt=""
+                    />
                 </button>
             </form>
             {isTouched && value.length ? (
                 <div className={classes.searchResult}>
                     {search.arrayProducts && search.arrayProducts.length ? (
                         <ul className={classes.list}>
-                            <li>
-                                <a href=""></a>
-                            </li>
+                            {search.arrayProducts.map((product, index) => (
+                                <li key={index}>
+                                    <Link to={`/product/${product.id}`}>
+                                        {product.title}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     ) : (
                         <h2>Products was not found</h2>

@@ -8,11 +8,9 @@ import Logo from '../../../image/Logo.svg';
 import Profiler from '../../../image//icons/profile.svg';
 import Shuffle from '../../../image/icons/shuffle.svg';
 import Wishlist from '../../../image/icons/favorites.svg';
-import Cart from '../../../image/icons/cart.svg';
 import { useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
+import WishlistButton from '../Wishlist/WishlistButton';
 import CartBotton from '../Cart/CartButton';
-import BtnWishlist from '../Wishlist/btnWishlist';
 import HamburgerBtn from '../Hamburger/HamburgerBtn';
 import BtnProfile from '../Profile/BtnProfile';
 
@@ -43,7 +41,7 @@ const Header = () => {
                         <div>{isTablet || (isDesktop && <SearchForm />)}</div>
                         <div className={classes['grid__right']}>
                             <BtnProfile />
-                            <BtnWishlist />
+                            <WishlistButton />
                             <CartBotton />
                         </div>
                     </div>

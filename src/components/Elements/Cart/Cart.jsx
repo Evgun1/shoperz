@@ -8,14 +8,13 @@ import { toggle } from '../../../store/popup/popup';
 
 const Cart = () => {
     const cartProducts = useSelector((state) => state.cart.productsArray);
-    const products = useFetchProductsById(cartProducts)
+    const products = useFetchProductsById(cartProducts);
     const [cartTotal, setCartTotal] = useState();
     const dispatch = useDispatch();
 
     const toggleCartHandler = () => {
         dispatch(toggle(null));
     };
-
 
     useEffect(() => {
         let total = 0;

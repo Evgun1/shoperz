@@ -23,13 +23,26 @@
     width: 100%;
 }
 
-@media screen and (min-width: 992px) {
-  .list {
-    padding: 0;
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(7, 1fr);
-    list-style: none;
-    justify-content: center;
+.list li:not(:nth-child(7n)) .button::after {
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 100%;
+    top: 0;
+    right: -5px;
+    background-color: black;
 }
+.button:hover {
+    background-color: #0077e4;
+}
+
+@media screen and (min-width: 992px) {
+    .list {
+        padding: 0;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(7, 1fr);
+        list-style: none;
+        justify-content: center;
+    }
 }

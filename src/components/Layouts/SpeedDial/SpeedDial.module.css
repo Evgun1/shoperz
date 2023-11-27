@@ -1,13 +1,15 @@
 .wrapper {
+    /* position: relative; */
     position: relative;
+    z-index: 2;
 }
 
 .btnOpen {
-    /* position: absolute; */
-    display: flex;
+    /* z-index: 2; */
+    /* display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 10px; */
 }
 
 .btn {
@@ -20,6 +22,11 @@
     border: none;
     background: white;
     box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+    color: #586a84;
+}
+
+.btnActive {
+    color: #ff316a;
 }
 
 .btn img {
@@ -46,4 +53,3 @@
     flex-direction: column;
     gap: 5px;
 }
-

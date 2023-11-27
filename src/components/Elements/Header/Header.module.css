@@ -120,7 +120,10 @@
     }
 
     .button {
-        width: 54px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90px;
         height: 40px;
         border: none;
         background: #319dff;
@@ -170,11 +173,21 @@
 .searchResult {
     position: absolute;
     top: 30px;
-    width: 100%;
-    padding: 10px 0;
+    width: 86.9%;
+    max-height: 250px;
+    padding: 5px 0;
     background-color: white;
     border: 1px solid #0077e4;
+    overflow: auto;
     z-index: 3;
+}
+
+.searchResult ul {
+    padding: 0;
+}
+
+.searchResult h2 {
+    padding: 10px;
 }
 
 .list a {

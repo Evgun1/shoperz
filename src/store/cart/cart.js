@@ -40,6 +40,8 @@ export const cartSlice = createSlice({
             }
             state.totalAmount = state.productsArray.length;
 
+            // state.totalPrice = state.productsArray
+
             window.localStorage.setItem('cart', JSON.stringify(state));
         },
         remoteToCart(state, action) {

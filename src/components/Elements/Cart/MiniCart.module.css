@@ -1,0 +1,55 @@
+.product {
+    position: relative;
+    display: grid;
+    grid-template-columns: 100px 1fr 50px;
+    padding: 5px;
+    grid-gap: 15px;
+    border: 1px solid #eef0f4;
+}
+
+.product img {
+    width: 100px;
+    height: 100px;
+
+    object-fit: contain;
+}
+.midleColumn {
+    display: grid;
+    align-content: space-around;
+}
+
+.rightColumn {
+    display: grid;
+    align-content: end;
+    justify-content: center;
+}
+
+.rightColumn p {
+    font-size: 16px;
+}
+
+.btn {
+    position: absolute;
+    top: 4%;
+    right: 1%;
+    /* background: black; */
+    width: 20px;
+    height: 20px;
+}
+
+.btn::after,
+.btn::before {
+    position: absolute;
+    left: 10px;
+    content: ' ';
+    height: 100%;
+    width: 1px;
+    background-color: #333;
+}
+
+.btn::after {
+    transform: rotate(-45deg);
+}
+.btn::before {
+    transform: rotate(45deg);
+}

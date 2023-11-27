@@ -7,12 +7,14 @@ import NotFound from '../components/Pages/NotFound/NotFound';
 import App from '../App';
 import productLoader from './poductLoader';
 import categoryLoader from './categoryLoader';
+import singInAction from './singInAction';
 
 export const routerConfig = [
     {
         path: '/',
         element: <App />,
         errorElement: <NotFound />,
+        action: singInAction,
 
         children: [
             {

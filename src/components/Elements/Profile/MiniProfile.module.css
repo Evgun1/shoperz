@@ -1,0 +1,21 @@
+.wrapper {
+    display: grid;
+    gap: 10px;
+    position: absolute;
+    background-color: white;
+    bottom: -5px;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    padding: 5px;
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
+    z-index: 3;
+}
+
+.wrapper button {
+    background-color: #586a84;
+    color: white;
+    width: 70%;
+    height: 30px;
+    justify-content: center;
+    border-radius: 20px;
+}

@@ -1,14 +1,29 @@
+import { useState } from 'react';
 import classes from './Profile.module.css';
-import ProfileForm from './ProfileForm';
+import ProfileLog from './ProfileLog';
+import ProfileReg from './ProfileReg';
+import useAuth from '../../../hooks/use-auth';
+import { useDispatch } from 'react-redux';
+import { removeUsers } from '../../../store/auth/useAuth';
 
 const Profile = () => {
+    const dispatch = useDispatch();
+    const [showSubReg, setShowSubReg] = useState(false);
+
+    const btnClick = () => setShowSubReg((prev) => !prev);
+
     return (
         <div className={classes.wrapper}>
-            <ProfileForm />
-            <div className={classes.reg}>
-                <p>New accaunt</p>
-                <button className={classes.btn}>Register</button>
-            </div>
+            {showSubReg ? (
+                <ProfileReg setShowSubReg={setShowSubReg} />
+            ) : (
+                <div>
+                    <ProfileLog />
+                    <div className={classes.reg} onClick={btnClick}>
+                        <button className={classes.btn}>Register</button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

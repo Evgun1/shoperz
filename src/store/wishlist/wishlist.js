@@ -32,6 +32,19 @@ const wishlist = createSlice({
                         body: JSON.stringify(state.productsArray),
                     }
                 ).then((res) => console.log(res));
+            } else {
+                state.productsArray.splice(existingProductIndex, 1);
+
+                fetch(
+                    'https://shopez-53fe0-default-rtdb.europe-west1.firebasedatabase.app/HomePage/wishlist.json',
+                    {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(state.productsArray),
+                    }
+                ).then((res) => console.log(res));
             }
         },
         removeFromWishlist(state, action) {

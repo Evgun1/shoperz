@@ -1,0 +1,49 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.reg {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    width: 100%;
+}
+
+.input input {
+    width: 100%;
+    height: 30px;
+    border: black solid 1px;
+}
+
+.btn {
+    display: flex;
+    gap: 20px;
+    border: none;
+    border-radius: 20px;
+}
+
+.btnBack {
+    width: 60px;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
+    background-color: #eef0f4;
+}
+.btnReg {
+    width: 110px;
+    height: 30px;
+    background: #319dff;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+}

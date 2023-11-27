@@ -4,6 +4,7 @@ import { responsiveReducer } from './responsive';
 import wishlistReducer from './wishlist/wishlist';
 import popup from './popup/popup';
 import search from './search/search';
+import useAuth from './auth/useAuth';
 
 export default configureStore({
     reducer: {
@@ -12,6 +13,7 @@ export default configureStore({
         cart: cartReducer,
         wishlist: wishlistReducer,
         responsive: responsiveReducer,
+        user: useAuth,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({

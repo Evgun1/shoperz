@@ -17,7 +17,7 @@
 .form {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
 }
 
 .log {
@@ -26,9 +26,36 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    margin-bottom: 10px;
 }
 
-.log::before {
+.labelNewAcc {
+    text-align: center;
+    width: 100%;
+    position: relative;
+    color: #7d8fa9;
+}
+
+.labelNewAcc span {
+    position: relative;
+    z-index: 2;
+    background: white;
+    padding: 0 3px;
+}
+
+.labelNewAcc::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 1px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: #7d8fa9;
+    z-index: 1;
+}
+
+.lo .log::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -52,10 +79,6 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-}
-
-.reg p {
-    color: #7d8fa9;
 }
 
 .btn {
